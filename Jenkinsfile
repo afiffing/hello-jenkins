@@ -5,16 +5,13 @@ pipeline
 
 	agent { label 'docker' }
 
-	 environment {
-	 filepath = '/home/ubuntu/abc'
-	 }
 
 	stages{
 	
 		stage('dev') 
 			{
 			steps{
-   	  			sh 'cat filepath'
+   	  			sh 'cat /home/ubuntu/abc'
 				} 
 			}
 
