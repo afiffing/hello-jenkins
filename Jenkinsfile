@@ -8,14 +8,16 @@ pipeline
 	
 		stage('dev') 
 			{
-   	  		sh 'cat /home/ubuntu/abc'
+			steps{
+   	  			sh 'cat /home/ubuntu/abc'
+				} 
 			}
 
 		stage('qa')
 			{
-
-			sh 'ls -al /home/ubuntu/abc'
-
+			steps{
+				sh 'ls -al /home/ubuntu/abc'
+				}
 			}	
 
 
