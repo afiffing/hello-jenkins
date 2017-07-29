@@ -2,15 +2,22 @@
 
 pipeline
 {
-	 
+	agent { label 'docker' }
+
+	stages{
 	
-	agent { label 'docker' 
+		stage('dev') 
+			{
+   	  		sh 'cat /home/ubuntu/abc'
+			}
 
-	stage('dev') 
-	{
-     sh 'cat /home/ubuntu/abc'
-	}
+		stage('qa')
+			{
+
+			sh 'ls -al /home/ubuntu/abc'
+
+			}	
 
 
-}
+		}
 }
