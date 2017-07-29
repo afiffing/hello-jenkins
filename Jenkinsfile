@@ -1,14 +1,16 @@
 #!/usr/bin/env groovy
 
-pipeline 
+pipeline
 {
-	agent ('docker') 
-	{
+	 
 	
+	agent { label 'docker' 
+
 	stage('dev') 
 	{
      sh 'cat /home/ubuntu/abc'
 	}
+
 
 }
 }
