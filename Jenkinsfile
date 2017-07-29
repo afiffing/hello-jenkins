@@ -14,8 +14,7 @@ pipeline
 		stage('dev') 
 			{
 			steps{
-				sh 'printenv'
-   	  			sh 'cat /home/ubuntu/abc'
+   	  			sh 'cat 'filepath''
 				} 
 			}
 
