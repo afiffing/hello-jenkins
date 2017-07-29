@@ -1,2 +1,2 @@
 hello-jenkins
-ok  ubuntu added
+testing jenkinsfile
