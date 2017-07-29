@@ -5,21 +5,25 @@ pipeline
 
 	agent { label 'docker' }
 
-	 parameters { string(name: 'filepath', defaultValue: '/home/ubuntu/abc', description: 'yo! you got it.') }
+	 //parameters { string(name: 'filepath', defaultValue: '/home/ubuntu/abc', description: 'yo! you got it.') }
+	 environment {
+	 filepath = '/home/ubuntu/abc'
+	 }
 
 	stages{
 	
 		stage('dev') 
 			{
 			steps{
-   	  			sh 'cat ${params.filepath}'
+				sh 'printenv'
+   	  			sh 'cat /home/ubuntu/abc'
 				} 
 			}
 
 		stage('qa')
 			{
 			steps{
-				sh 'ls -al ${params.filepath}'
+				sh 'ls -al /home/ubuntu/abc' 
 				}
 			}	
 
