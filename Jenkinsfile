@@ -14,7 +14,7 @@ pipeline
 		stage('dev') 
 			{
 			steps{
-   	  			sh 'cat 'filepath''
+   	  			sh 'cat filepath'
 				} 
 			}
 
