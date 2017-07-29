@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 
 pipeline 
-
 {
 	agent ('docker') 
 	{
@@ -11,4 +10,5 @@ pipeline
      sh 'cat /home/ubuntu/abc'
 	}
 
+}
 }
