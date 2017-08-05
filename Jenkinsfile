@@ -2,7 +2,7 @@
 
 pipeline
 {
-	options([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/afiffing/hello-jenkins.git/'], pipelineTriggers([githubPush()])])
+	options([[$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/afiffing/hello-jenkins.git'], pipelineTriggers([githubPush()])])
 
 
 	agent { label 'docker' }
