@@ -2,7 +2,7 @@
 
 pipeline
 {
-	properties([pipelineTriggers([githubPush()])])
+	options([pipelineTriggers([githubPush()])])
 
 node {
     git url: 'https://github.com/afiffing/hello-jenkins.git', branch: 'master'
