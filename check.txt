@@ -2,4 +2,3 @@ hello-jenkins
 
 testing jenkinsfile
 test
-i don't know
