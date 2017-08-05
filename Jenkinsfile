@@ -5,7 +5,6 @@ pipeline
 
 	agent { label 'docker' }
 
-
 	stages{
 	
 		stage('dev') 
