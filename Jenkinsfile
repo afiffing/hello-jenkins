@@ -2,7 +2,11 @@
 
 pipeline
 {
-	options([[$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/afiffing/hello-jenkins.git'], pipelineTriggers([githubPush()])])
+	properties([pipelineTriggers([githubPush()])])
+
+node {
+    git url: 'https://github.com/afiffing/hello-jenkins.git', branch: 'master'
+}
 
 
 	agent { label 'docker' }
