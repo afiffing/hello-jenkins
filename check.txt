@@ -1,5 +1,3 @@
 hello-jenkins
 this should work
 testing jenkinsfile
-test
-check for normal
