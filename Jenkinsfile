@@ -11,7 +11,7 @@ pipeline
 			{
 			steps{
 
-   	  			sh 'sudo docker build --pull=true -t ec2-34-213-54-39.us-west-2.compute.amazonaws.com/hello-jenkins:$GIT_COMMIT .'
+   	  			sh 'sudo docker build --pull=true -t hello-jenkins:$GIT_COMMIT .'
 
 				} 
 			}
@@ -19,7 +19,7 @@ pipeline
 		stage('test')
 			{
 			steps{
-				sh 'sudo docker run -i --rm ec2-34-213-54-39.us-west-2.compute.amazonaws.com/hello-jenkins:$GIT_COMMIT ./script/test' 
+				sh 'sudo docker run -i --rm hello-jenkins:$GIT_COMMIT ./script/test' 
 				}
 			}	
 
