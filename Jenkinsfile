@@ -2,26 +2,24 @@
 
 pipeline
 {
-	git([url: 'https://github.com/afiffing/hello-jenkins.git', branch: 'master'])
 
 	agent { label 'docker' }
 
-	options { [buildDiscarder(logRotator(numToKeepStr: '2'), pipelineTriggers([githubPush()]))] }
-
 	stages{
 	
-		stage('dev') 
+		stage('build') 
 			{
 			steps{
 
-   	  			sh 'cat /home/ubuntu/abc'
+   	  			sh 'sudo docker build --pull=true -t ec2-34-213-54-39.us-west-2.compute.amazonaws.com/hello-jenkins:$GIT_COMMIT .'
+
 				} 
 			}
 
-		stage('qa')
+		stage('test')
 			{
 			steps{
-				sh 'ls -al /home/ubuntu/abc' 
+				sh 'sudo docker run -i --rm ec2-34-213-54-39.us-west-2.compute.amazonaws.com/hello-jenkins:$GIT_COMMIT ./script/test' 
 				}
 			}	
 
