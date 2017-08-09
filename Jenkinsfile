@@ -11,7 +11,9 @@ pipeline
 			{
 			steps{
 
-   	  			sh 'sudo docker build --pull=true -t hello-jenkins:$GIT_COMMIT .'
+				sh 'printenv'
+
+   	  			//sh 'sudo docker build --pull=true -t hello-jenkins:$GIT_COMMIT .'
 
 				} 
 			}
@@ -19,7 +21,8 @@ pipeline
 		stage('test')
 			{
 			steps{
-				sh 'sudo docker run -i --rm hello-jenkins:$GIT_COMMIT ./script/test' 
+
+				//sh 'sudo docker run -i --rm hello-jenkins:$GIT_COMMIT ./script/test' 
 				}
 			}	
 
