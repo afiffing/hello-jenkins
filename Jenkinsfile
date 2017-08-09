@@ -4,6 +4,7 @@ pipeline
 {
 	
 	agent { label 'docker' }
+	properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '15', numToKeepStr: '2')), pipelineTriggers([githubPush()])])
 
 	stages{
 	
