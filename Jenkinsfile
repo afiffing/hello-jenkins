@@ -10,10 +10,9 @@ pipeline
 		stage('build') 
 			{
 			steps{
+				gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
 
-				sh 'printenv'
-
-   	  			//sh 'sudo docker build --pull=true -t hello-jenkins:$GIT_COMMIT .'
+   	  			sh 'sudo docker build --pull=true -t hello-jenkins:$gitCommit .'
 
 				} 
 			}
@@ -22,7 +21,9 @@ pipeline
 			{
 			steps{
 
-				//sh 'sudo docker run -i --rm hello-jenkins:$GIT_COMMIT ./script/test' 
+				gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+
+				sh 'sudo docker run -i --rm hello-jenkins:$gitCommit ./script/test' 
 				}
 			}	
 
