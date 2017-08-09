@@ -2,9 +2,11 @@
 
 pipeline
 {
-	
+	git([url: 'https://github.com/afiffing/hello-jenkins.git', branch: 'master'])
+
 	agent { label 'docker' }
-	properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '15', numToKeepStr: '2')), pipelineTriggers([githubPush()])])
+
+	options { [buildDiscarder(logRotator(numToKeepStr: '2'), pipelineTriggers([githubPush()]))] }
 
 	stages{
 	
